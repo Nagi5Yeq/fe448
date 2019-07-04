@@ -19,7 +19,7 @@
 #define fe448_mul          crypto_sign_ed448_ref_fe448_mul
 #define fe448_square       crypto_sign_ed448_ref_fe448_square
 #define fe448_invert       crypto_sign_ed448_ref_fe448_invert
-#define fe448_pow2523      crypto_sign_ed448_ref_fe448_pow2523
+#define fe448_pow446       crypto_sign_ed448_ref_fe448_pow446
 
 typedef struct 
 {
