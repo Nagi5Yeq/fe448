@@ -41,7 +41,7 @@ static const ge448_aff ge448_base_multiples_affine[745] = {
 };
 
 /* point addition from rfc8032 */
-static void ge25519_mixadd2(ge448_p3 *r, const ge448_aff *q)
+static void ge448_mixadd2(ge448_p3 *r, const ge448_aff *q)
 {
   fe448 a, b, c, d, e, f, g, h;
   a = r->z;                    /* A=Z1*Z2 (Z2=1) */
@@ -267,6 +267,6 @@ void ge448_scalarmult_base(ge448_p3 *r, const sc448 *s)
   for (i = 1; i < 149; i++)
   {
     choose_t(&t, (unsigned long long)i, b[i]);
-    ge25519_mixadd2(r, &t);
+    ge448_mixadd2(r, &t);
   }
 }
