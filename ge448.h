@@ -4,13 +4,13 @@
 #include "fe448.h"
 #include "sc448.h"
 
-#define ge448                           crypto_sign_ed448_ref_ge448
-#define ge448_base                      crypto_sign_ed448_ref_ge448_base
-#define ge448_unpackneg_vartime         crypto_sign_ed448_ref_unpackneg_vartime
-#define ge448_pack                      crypto_sign_ed448_ref_pack
-#define ge448_isneutral_vartime         crypto_sign_ed448_ref_isneutral_vartime
-#define ge448_double_scalarmult_vartime crypto_sign_ed448_ref_double_scalarmult_vartime
-#define ge448_scalarmult_base           crypto_sign_ed448_ref_scalarmult_base
+#define ge448                           crypto_sign_ge448
+#define ge448_base                      crypto_sign_ge448_base
+#define ge448_unpackneg_vartime         crypto_sign_unpackneg_vartime
+#define ge448_pack                      crypto_sign_pack
+#define ge448_isneutral_vartime         crypto_sign_isneutral_vartime
+#define ge448_double_scalarmult_vartime crypto_sign_double_scalarmult_vartime
+#define ge448_scalarmult_base           crypto_sign_scalarmult_base
 
 typedef struct
 {

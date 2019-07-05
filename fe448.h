@@ -3,23 +3,23 @@
 
 #include "defs.h"
 
-#define fe448              crypto_sign_ed448_ref_fe448
-#define fe448_freeze       crypto_sign_ed448_ref_fe448_freeze
-#define fe448_unpack       crypto_sign_ed448_ref_fe448_unpack
-#define fe448_pack         crypto_sign_ed448_ref_fe448_pack
-#define fe448_iszero       crypto_sign_ed448_ref_fe448_iszero
-#define fe448_iseq_vartime crypto_sign_ed448_ref_fe448_iseq_vartime
-#define fe448_cmov         crypto_sign_ed448_ref_fe448_cmov
-#define fe448_setone       crypto_sign_ed448_ref_fe448_setone
-#define fe448_setzero      crypto_sign_ed448_ref_fe448_setzero
-#define fe448_neg          crypto_sign_ed448_ref_fe448_neg
-#define fe448_getparity    crypto_sign_ed448_ref_fe448_getparity
-#define fe448_add          crypto_sign_ed448_ref_fe448_add
-#define fe448_sub          crypto_sign_ed448_ref_fe448_sub
-#define fe448_mul          crypto_sign_ed448_ref_fe448_mul
-#define fe448_square       crypto_sign_ed448_ref_fe448_square
-#define fe448_invert       crypto_sign_ed448_ref_fe448_invert
-#define fe448_pow446       crypto_sign_ed448_ref_fe448_pow446
+#define fe448              crypto_sign_fe448
+#define fe448_freeze       crypto_sign_fe448_freeze
+#define fe448_unpack       crypto_sign_fe448_unpack
+#define fe448_pack         crypto_sign_fe448_pack
+#define fe448_iszero       crypto_sign_fe448_iszero
+#define fe448_iseq_vartime crypto_sign_fe448_iseq_vartime
+#define fe448_cmov         crypto_sign_fe448_cmov
+#define fe448_setone       crypto_sign_fe448_setone
+#define fe448_setzero      crypto_sign_fe448_setzero
+#define fe448_neg          crypto_sign_fe448_neg
+#define fe448_getparity    crypto_sign_fe448_getparity
+#define fe448_add          crypto_sign_fe448_add
+#define fe448_sub          crypto_sign_fe448_sub
+#define fe448_mul          crypto_sign_fe448_mul
+#define fe448_square       crypto_sign_fe448_square
+#define fe448_invert       crypto_sign_fe448_invert
+#define fe448_pow446       crypto_sign_fe448_pow446
 
 typedef struct 
 {

@@ -3,18 +3,18 @@
 
 #include "defs.h"
 
-#define sc448                  crypto_sign_ed448_ref_sc448
-#define sc448_from57bytes      crypto_sign_ed448_ref_sc448_from57bytes
-#define sc448_from114bytes     crypto_sign_ed448_ref_sc448_from114bytes
-#define sc448_to57bytes        crypto_sign_ed448_ref_sc448_to57bytes
-#define sc448_iszero_vartime   crypto_sign_ed448_ref_sc448_iszero_vartime
-#define sc448_isshort_vartime  crypto_sign_ed448_ref_sc448_isshort_vartime
-#define sc448_lt_vartime       crypto_sign_ed448_ref_sc448_lt_vartime
-#define sc448_add              crypto_sign_ed448_ref_sc448_add
-#define sc448_sub_nored        crypto_sign_ed448_ref_sc448_sub_nored
-#define sc448_mul              crypto_sign_ed448_ref_sc448_mul
-#define sc448_window3          crypto_sign_ed448_ref_sc448_window3
-#define sc448_2interleave2     crypto_sign_ed448_ref_sc448_2interleave2
+#define sc448                  crypto_sign_sc448
+#define sc448_from57bytes      crypto_sign_sc448_from57bytes
+#define sc448_from114bytes     crypto_sign_sc448_from114bytes
+#define sc448_to57bytes        crypto_sign_sc448_to57bytes
+#define sc448_iszero_vartime   crypto_sign_sc448_iszero_vartime
+#define sc448_isshort_vartime  crypto_sign_sc448_isshort_vartime
+#define sc448_lt_vartime       crypto_sign_sc448_lt_vartime
+#define sc448_add              crypto_sign_sc448_add
+#define sc448_sub_nored        crypto_sign_sc448_sub_nored
+#define sc448_mul              crypto_sign_sc448_mul
+#define sc448_window3          crypto_sign_sc448_window3
+#define sc448_2interleave2     crypto_sign_sc448_2interleave2
 
 typedef struct 
 {

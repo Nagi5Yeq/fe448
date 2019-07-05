@@ -1,6 +1,3 @@
-#define WINDOWSIZE 1 /* Should be 1,2, or 4 */
-#define WINDOWMASK ((1 << WINDOWSIZE) - 1)
-
 #include "fe448.h"
 
 /* 2**448-2**224-1 */
@@ -36,6 +33,7 @@ static void reduce_add_sub(fe448 *r)
   crypto_uint32 t;
   int i, rep;
 
+  /* not sure for the rep */
   for (rep = 0; rep < 4; rep++)
   {
     t = r->v[56];

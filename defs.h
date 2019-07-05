@@ -13,4 +13,6 @@ typedef uint32_t crypto_uint32;
 
 int crypto_sign_ed448_keypair(unsigned char *pk, unsigned char *sk);
 
+int crypto_sign_ed448_detached(unsigned char *sign, unsigned long long *smlen, const unsigned char *m, unsigned long long mlen, const unsigned char *sk);
+
 #endif /* DEFS_H */

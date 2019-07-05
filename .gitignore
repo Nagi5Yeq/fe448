@@ -2,4 +2,5 @@
 *.py
 .vscode/
 *.out
-t/
+temp/
+*.a
