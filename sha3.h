@@ -1,3 +1,5 @@
+/* Copied from https://github.com/mjosaarinen/tiny_sha3 */
+
 // sha3.h
 // 19-Nov-11  Markku-Juhani O. Saarinen <mjos@iki.fi>
 
@@ -44,4 +46,3 @@ void shake_xof(sha3_ctx_t *c);
 void shake_out(sha3_ctx_t *c, void *out, size_t len);
 
 #endif
-

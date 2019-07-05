@@ -11,4 +11,6 @@ typedef uint16_t crypto_uint16;
 typedef int32_t crypto_int32;
 typedef uint32_t crypto_uint32;
 
+int crypto_sign_ed448_keypair(unsigned char *pk, unsigned char *sk);
+
 #endif /* DEFS_H */

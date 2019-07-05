@@ -1,3 +1,5 @@
+/* Copied from https://github.com/mjosaarinen/tiny_sha3 */
+
 // sha3.c
 // 19-Nov-11  Markku-Juhani O. Saarinen <mjos@iki.fi>
 

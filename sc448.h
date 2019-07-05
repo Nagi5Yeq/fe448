@@ -40,8 +40,10 @@ void sc448_sub_nored(sc448 *r, const sc448 *x, const sc448 *y);
 
 void sc448_mul(sc448 *r, const sc448 *x, const sc448 *y);
 
-/* Convert s into a representation of the form \sum_{i=0}^{84}r[i]2^3
+/* 
+ * Convert s into a representation of the form \sum_{i=0}^{150}r[i]2^3
  * with r[i] in {-4,...,3}
+ * need 150 bytes, because the r[148] may be 4 
  */
 void sc448_window3(signed char r[150], const sc448 *s);
 
