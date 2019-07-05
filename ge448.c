@@ -36,7 +36,7 @@ const ge448 ge448_base = {{{0x5E, 0xC0, 0x0C, 0xC7, 0x2B, 0xA8, 0x26, 0x26, 0x8E
                             0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}}};
 
 /* Multiples of the base point in affine representation */
-static const ge448_aff ge448_base_multiples_affine[745] = {
+static const ge448_aff ge448_base_multiples_affine[750] = {
 #include "ge448_base.data"
 };
 
@@ -168,7 +168,7 @@ int ge448_unpackneg_vartime(ge448_p3 *r, const unsigned char p[57])
   fe448_square(&num, &r->y);         /* x = y^2 */
   fe448_mul(&den, &num, &ge448_ecd); /* den = dy^2 */
   fe448_sub(&num, &num, &r->z);      /* x = y^2-1 */
-  fe448_sub(&den, &r->z, &den);      /* den = dy^2-1 */
+  fe448_sub(&den, &den, &r->z);      /* den = dy^2-1 */
 
   /* Computation of sqrt(num/den) */
   /* 1.: computation of num^3 * den */
@@ -257,14 +257,14 @@ void ge448_double_scalarmult_vartime(ge448_p3 *r, const ge448_p3 *p1, const sc44
 
 void ge448_scalarmult_base(ge448_p3 *r, const sc448 *s)
 {
-  signed char b[149];
+  signed char b[150];
   int i;
   ge448_aff t;
   sc448_window3(b, s);
 
   choose_t((ge448_aff *)r, 0, b[0]);
   fe448_setone(&r->z);
-  for (i = 1; i < 149; i++)
+  for (i = 1; i < 150; i++)
   {
     choose_t(&t, (unsigned long long)i, b[i]);
     ge448_mixadd2(r, &t);

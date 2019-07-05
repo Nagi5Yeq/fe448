@@ -1,3 +1,5 @@
 *.o
 *.py
 .vscode/
+*.out
+t/

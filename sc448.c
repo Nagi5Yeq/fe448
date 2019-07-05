@@ -199,7 +199,7 @@ void sc448_mul(sc448 *r, const sc448 *x, const sc448 *y)
   barrett_reduce(r, t);
 }
 
-void sc448_window3(signed char r[149], const sc448 *s)
+void sc448_window3(signed char r[150], const sc448 *s)
 {
   char carry;
   int i;
@@ -224,8 +224,9 @@ void sc448_window3(signed char r[149], const sc448 *s)
   r[8 * i + 4] =  (s->v[3 * i + 1] >> 4) & 7;
 
   /* Making it signed */
+  r[149] = 0;
   carry = 0;
-  for (i = 0; i < 148; i++)
+  for (i = 0; i < 149; i++)
   {
     r[i] += carry;
     r[i + 1] += r[i] >> 3;
@@ -233,7 +234,7 @@ void sc448_window3(signed char r[149], const sc448 *s)
     carry = r[i] >> 2;
     r[i] -= carry << 3;
   }
-  r[148] += carry;
+  r[149] += carry;
 }
 
 void sc448_2interleave2(unsigned char r[223], const sc448 *s1, const sc448 *s2)

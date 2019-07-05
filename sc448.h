@@ -43,7 +43,7 @@ void sc448_mul(sc448 *r, const sc448 *x, const sc448 *y);
 /* Convert s into a representation of the form \sum_{i=0}^{84}r[i]2^3
  * with r[i] in {-4,...,3}
  */
-void sc448_window3(signed char r[149], const sc448 *s);
+void sc448_window3(signed char r[150], const sc448 *s);
 
 void sc448_2interleave2(unsigned char r[223], const sc448 *s1, const sc448 *s2);
 
