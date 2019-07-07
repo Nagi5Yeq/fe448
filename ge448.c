@@ -244,7 +244,7 @@ void ge448_double_scalarmult_vartime(ge448_p3 *r, const ge448_p3 *p1, const sc44
 
   /* scalar multiplication */
   *r = pre[b[222]];
-  for (i = 125; i >= 0; i--)
+  for (i = 221; i >= 0; i--)
   {
     dbl_p3(r, r);
     dbl_p3(r, r);
