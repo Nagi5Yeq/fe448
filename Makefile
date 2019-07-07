@@ -1,11 +1,13 @@
-CFLAGS=-O2 -Wall -Wno-unused-result
+CFLAGS=-g -Wall -Wno-unused-result
 
 all: libfe448.a
 
 .PHONY: test
 test: defs.h fe448.h ge448.h sc448.h sha3.h libfe448.a
-	$(CC) $(CFLAGS) -I. t/testv.c libfe448.a -o test.out
-	./test.out
+	$(CC) $(CFLAGS) -I. t/testsign.c libfe448.a -o testsign.out
+	$(CC) $(CFLAGS) -I. t/testverify.c libfe448.a -o testverify.out
+	./testsign.out
+	./testverify.out
 
 fe448.o: defs.h fe448.h
 

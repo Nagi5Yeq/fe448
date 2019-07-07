@@ -68,7 +68,7 @@ void testsign(const test_t *tests, int ntest)
         {
             assert(bsign[i] == mysign[i]);
         }
-        printf("test %d good\n", j);
+        printf("test sign %d good\n", j);
     }
 }
 

@@ -15,4 +15,8 @@ int crypto_sign_ed448_keypair(unsigned char *pk, unsigned char *sk);
 
 int crypto_sign_ed448_detached(unsigned char *sign, unsigned long long *smlen, const unsigned char *m, unsigned long long mlen, const unsigned char *sk);
 
+int crypto_sign_ed448_open_detached(const unsigned char *m, unsigned long long mlen, const unsigned char *sign, const unsigned char *pk);
+
+int crypto_verify_57(const unsigned char *x, const unsigned char *y);
+
 #endif /* DEFS_H */
