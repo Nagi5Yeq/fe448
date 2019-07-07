@@ -14,23 +14,9 @@ int crypto_sign_ed448_keypair(
     unsigned char *sk)
 {
   int i;
-  sc448 scsk;
-  ge448 gepk;
-  unsigned char extsk[114];
-  sha3_ctx_t ctx;
 
   (void)getrandom(sk, 57, 0);
-  shake256_init(&ctx);
-  shake_update(&ctx, sk, 57);
-  shake_xof(&ctx);
-  shake_out(&ctx, extsk, 114);
-  extsk[56] = 0;
-  extsk[55] |= 0x80;
-  extsk[0] &= 0xFC;
-
-  sc448_from57bytes(&scsk, extsk);
-  ge448_scalarmult_base(&gepk, &scsk);
-  ge448_pack(pk, &gepk);
+  crypto_sign_ed448_derive_pk(pk, sk);
   for (i = 0; i < 57; i++)
     sk[57 + i] = pk[i];
   return 0;
@@ -121,4 +107,25 @@ int crypto_verify_57(const unsigned char *x, const unsigned char *y)
     differentbits |= (x[i] ^ y[i]);
   }
   return (1 & ((differentbits - 1) >> 8)) - 1;
+}
+
+/* derive publick key from secret key, not copy */
+int crypto_sign_ed448_derive_pk(unsigned char *pk, const unsigned char *sk)
+{
+  ge448 gepk;
+  sc448 scsk;
+  unsigned char extsk[114];
+  sha3_ctx_t ctx;
+
+  shake256_init(&ctx);
+  shake_update(&ctx, sk, 57);
+  shake_xof(&ctx);
+  shake_out(&ctx, extsk, 114);
+  extsk[56] = 0;
+  extsk[55] |= 0x80;
+  extsk[0] &= 0xFC;
+  sc448_from57bytes(&scsk, extsk);
+  ge448_scalarmult_base(&gepk, &scsk);
+  ge448_pack(pk, &gepk);
+  return 0;
 }

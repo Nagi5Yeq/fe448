@@ -17,6 +17,8 @@ int crypto_sign_ed448_detached(unsigned char *sign, unsigned long long *smlen, c
 
 int crypto_sign_ed448_open_detached(const unsigned char *m, unsigned long long mlen, const unsigned char *sign, const unsigned char *pk);
 
+int crypto_sign_ed448_derive_pk(unsigned char *pk, const unsigned char *sk);
+
 int crypto_verify_57(const unsigned char *x, const unsigned char *y);
 
 #endif /* DEFS_H */

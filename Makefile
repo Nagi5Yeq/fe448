@@ -31,4 +31,4 @@ data: ge448_gen.o fe448.o sc448.o
 
 .PHONY: clean
 clean:
-	rm *.o *.out *.a
+	rm -rf *.o *.out *.a
